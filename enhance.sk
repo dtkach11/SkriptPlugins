@@ -1,0 +1,18 @@
+#####CODED BY SYMPHONIQUE AKA Daniel T. Don't try to steal this code, I'll fucking find you.
+command /enhance <enchantment>:
+	trigger:
+		if player's inventory contains nether star:
+			add 1 to {_enchantment.item.%player%}
+			set {_enchantment} to argument 1
+			set {_enchantmentLevel} to enchant level of {_enchantment} of player's tool
+			if {_enchantmentLevel} > 6:
+				chance of 10%:
+					set {_enchantmentLevel} to {_enchantmentLevel} + 1
+					set {_enchantmentType} to "%{_enchantment}% %{_enchantmentLevel}%" parsed as enchantment type
+					
+			else:
+				set {_enchantmentLevel} to {_enchantmentLevel} + 1
+				set {_enchantmentType} to "%{_enchantment}% %{_enchantmentLevel}%" parsed as enchantment type
+				
+			enchant player's tool with {_enchantmentType}
+			remove 1 nether star from the player

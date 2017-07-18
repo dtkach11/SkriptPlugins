@@ -1,0 +1,12 @@
+#####CODED BY SYMPHONIQUE AKA Daniel T. Don't try to steal this code, I'll fucking find you.
+command /sethub [<text>]:
+	trigger:
+		if argument 1 is "staff":
+			set {teleportLocations::hubStaff} to player's location
+		else:
+			set {teleportLocations::hubDefault} to player's location
+on connect:
+	if player has permission "{staff}":
+		teleport player to {teleportLocations::hubStaff}
+	else:
+		teleport player to {teleportLocations::hubDefault}
