@@ -10,6 +10,8 @@ command /enhance <enchantment>:
 					set {_enchantmentLevel} to {_enchantmentLevel} + 1
 					set {_enchantmentType} to "%{_enchantment}% %{_enchantmentLevel}%" parsed as enchantment type
 					
+			###Incoming features
+			
 			else:
 				set {_enchantmentLevel} to {_enchantmentLevel} + 1
 				set {_enchantmentType} to "%{_enchantment}% %{_enchantmentLevel}%" parsed as enchantment type
