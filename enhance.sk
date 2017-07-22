@@ -1,20 +1,33 @@
-#####CODED BY SYMPHONIQUE AKA Daniel T. Don't try to steal this code.
+on skript load:
+     register a new custom enchantment with id name "Magic"
+     set {_enchantment} to "Magic" parsed as custom enchantment
+     set max level of {_enchantment} to 5
+     set rarity of {_enchantment} to 1
+     set accepted items for {_enchantment} to "Swords" and "Bow"
+     set lore name of {_enchantment} to "Magic Power"
+
 command /enhance <enchantment>:
-	trigger:
+	trigger: 
 		if player's inventory contains nether star:
 			add 1 to {_enchantment.item.%player%}
 			set {_enchantment} to argument 1
 			set {_enchantmentLevel} to enchant level of {_enchantment} of player's tool
-			if {_enchantmentLevel} > 6:
+			if {_enchantmentLevel} greater than 6:
 				chance of 10%:
 					set {_enchantmentLevel} to {_enchantmentLevel} + 1
 					set {_enchantmentType} to "%{_enchantment}% %{_enchantmentLevel}%" parsed as enchantment type
 					
-			###Incoming features
-			
 			else:
 				set {_enchantmentLevel} to {_enchantmentLevel} + 1
 				set {_enchantmentType} to "%{_enchantment}% %{_enchantmentLevel}%" parsed as enchantment type
 				
 			enchant player's tool with {_enchantmentType}
 			remove 1 nether star from the player
+
+command /eUpgrade <arg1>:
+	trigger:
+		if player's hand contains x:
+			add 1 to {_enchantment.item.%player%}
+			set {_enchantment} to argument 1
+			
+		
