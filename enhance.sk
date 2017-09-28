@@ -6,28 +6,27 @@ on skript load:
      set accepted items for {_enchantment} to "Swords" and "Bow"
      set lore name of {_enchantment} to "Magic Power"
 
-command /enhance <enchantment>:
+command /enhance [<enchantment>]:
 	trigger: 
-		if player's inventory contains nether star:
-			add 1 to {_enchantment.item.%player%}
-			set {_enchantment} to argument 1
-			set {_enchantmentLevel} to enchant level of {_enchantment} of player's tool
-			if {_enchantmentLevel} greater than 6:
-				chance of 10%:
+		if arg-1 is not set:
+			send " "
+			send "&7(&4&l!&7) &c&lPlease use an enchantment!"
+			send " "
+			send "&7(&4&lTIP&7) &c&l/enhance &7(&cenchantment&7)"
+		else:
+			if player's inventory contains nether star:
+				add 1 to {_enchantment.item.%player%}
+				set {_enchantment} to argument 1
+				set {_enchantmentLevel} to enchant level of {_enchantment} of player's tool
+				if {_enchantmentLevel} is greater than 6:
+					chance of 10%:
+						set {_enchantmentLevel} to {_enchantmentLevel} + 1
+						set {_enchantmentType} to "%{_enchantment}% %{_enchantmentLevel}%" parsed as enchantment type
+						send "&7(&a&l!&7) &a&lEnhancement Success!"
+					send "&7(&4&l!&7) &c&lEnhancement Failed!"
+				else:
 					set {_enchantmentLevel} to {_enchantmentLevel} + 1
 					set {_enchantmentType} to "%{_enchantment}% %{_enchantmentLevel}%" parsed as enchantment type
 					
-			else:
-				set {_enchantmentLevel} to {_enchantmentLevel} + 1
-				set {_enchantmentType} to "%{_enchantment}% %{_enchantmentLevel}%" parsed as enchantment type
-				
-			enchant player's tool with {_enchantmentType}
-			remove 1 nether star from the player
-
-command /eUpgrade <arg1>:
-	trigger:
-		if player's hand contains x:
-			add 1 to {_enchantment.item.%player%}
-			set {_enchantment} to argument 1
-			
-		
+				enchant player's tool with {_enchantmentType}
+				remove 1 nether star from the player
