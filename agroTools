@@ -1,0 +1,64 @@
+#Double drop;
+Doubledrop: true
+on break of wood with axe:
+	player's gamemode is survival:
+		if {@Doubledrop} is true:
+			player has permission "doubledrop.5precent":
+				chance of 5%:
+					drop a wood
+					
+				chance of {var}% # {var} between 0 and 100
+				chance of {var} # {var} between 0 and 11
+			player has permission "doubledrop.10precent":
+				chance of 10%:
+					drop a wood
+					
+				chance of {var}% # {var} between 0 and 100
+				chance of {var} # {var} between 0 and 11
+			player has permission "doubledrop.20precent":
+				chance of 20%:
+					drop a wood
+					
+				chance of {var}% # {var} between 0 and 100
+				chance of {var} # {var} between 0 and 11
+			player has permission "doubledrop.30precent":
+				chance of 30%:
+					drop a wood
+					
+				chance of {var}% # {var} between 0 and 100
+				chance of {var} # {var} between 0 and 11
+			player has permission "doubledrop.40precent":
+				chance of 40%:
+					drop a wood					
+				chance of {var}% # {var} between 0 and 100
+				chance of {var} # {var} between 0 and 11
+			player has permission "doubledrop.50precent":
+				chance of 50%:
+					drop a wood					
+				chance of {var}% # {var} between 0 and 100
+				chance of {var} # {var} between 0 and 11
+			player has permission "doubledrop.60precent":
+				chance of 60%:
+					drop a wood					
+				chance of {var}% # {var} between 0 and 100
+				chance of {var} # {var} between 0 and 11
+			player has permission "doubledrop.70precent":
+				chance of 70%:
+					drop a wood					
+				chance of {var}% # {var} between 0 and 100
+				chance of {var} # {var} between 0 and 11
+			player has permission "doubledrop.80precent":
+				chance of 80%:
+					drop a wood					
+				chance of {var}% # {var} between 0 and 100
+				chance of {var} # {var} between 0 and 11
+			player has permission "doubledrop.90precent":
+				chance of 90%:
+					drop a wood					
+				chance of {var}% # {var} between 0 and 100
+				chance of {var} # {var} between 0 and 11
+			player has permission "doubledrop.100precent":
+				chance of 100%:
+					drop a wood
+				chance of {var}% # {var} between 0 and 100
+				chance of {var} # {var} between 0 and 11
